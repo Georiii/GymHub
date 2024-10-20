@@ -9,7 +9,14 @@
     <script>
         function handleRegister(event) {
             event.preventDefault(); 
-            window.location.href = 'Login.html'; 
+            const notification = document.getElementById('notification');
+            notification.textContent = "Registration complete";
+            notification.style.display = "block";
+
+            
+            setTimeout(() => {
+                window.location.href = 'Login.html'; 
+            }, 2000); 
         }
     </script>
 </head>
@@ -17,6 +24,7 @@
 <body>
     <div class="container2">
         <h2>Register</h2>
+        <div id="notification" style="display: none; color: orange; text-align: center; margin-bottom: 20px; font-size: 15px; background-color: black; border-radius: 15px;"></div>
         <form onsubmit="handleRegister(event)">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
