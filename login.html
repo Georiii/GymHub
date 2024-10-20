@@ -5,16 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="Login.css">
+    <style>
+        .notification {
+            display: none; 
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: orange; 
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
     <script>
         function handleLogin(event) {
             event.preventDefault();
-            window.location.href = 'index.html'; 
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block';
+            notification.textContent = 'Log in successfully';
+            setTimeout(() => {
+                window.location.href = 'index.html'; 
+            }, 2000); 
         }
     </script>
 </head>
 <body>
     <div class="container1">
         <h2>Login</h2>
+        <div id="notification" class="notification"></div> 
         <form onsubmit="handleLogin(event)">
             <div class="mb-3">
                 <label for="email" class="form-label">Email address</label>
